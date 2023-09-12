@@ -1,0 +1,41 @@
+<ion-content [fullscreen]="true">
+	<div class="ion-padding grid-container">
+		<h1 class="ion-margin-bottom">
+			Create a new Account
+		</h1>
+		<form [formGroup]="contactForm"
+			(ngSubmit)="register()"
+			class="form-container">
+			<ion-item>
+				<ion-input labelPlacement="floating"
+					label="Email"
+					formControlName="email"
+					type="email"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input labelPlacement="floating"
+					label="Password"
+					formControlName="password"
+					type="password"></ion-input>
+			</ion-item>
+			<ion-item>
+				<ion-input labelPlacement="floating"
+					label="Confirm Password"
+					formControlName="c_password"
+					type="password"></ion-input>
+			</ion-item>
+			<ion-button [disabled]="contactForm.invalid"
+				class="ion-margin-top"
+				expand="block"
+				color="primary"
+				type="submit">
+				Register!
+			</ion-button>
+		</form>
+		<a [routerDirection]="'root'"
+			class="ion-margin-top"
+			routerLink="/login">
+			Already Registered?
+		</a>
+	</div>
+</ion-content>

@@ -1,0 +1,29 @@
+<!-- <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Welcome</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+	<!-- <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Welcome</ion-title>
+    </ion-toolbar>
+  </ion-header> -->
+
+	<ion-grid class="ion-text-center grid-container">
+		<ion-row>
+			<ion-col class="ion-margin-top">
+				<h1>Welcome to this App</h1>
+			</ion-col>
+		</ion-row>
+		<ion-row>
+			<ion-col class="ion-margin-top">
+				<a [routerDirection]="'root'"
+					routerLink="/login">
+					<h2>Next</h2>
+				</a>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+</ion-content>
