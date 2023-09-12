@@ -1,0 +1,7 @@
+{
+  "name": "petrack_lite",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
