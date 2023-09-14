@@ -32,6 +32,24 @@
 			routerLink="/register">
 			No account yet?
 		</a>
+		<h3>Or</h3>
+		<ion-button (click)="singInWithGoogle()"
+			class="ion-margin-top"
+			expand="block"
+			color="danger">
+			<ion-icon slot="start"
+				name="logo-google"></ion-icon>
+			Sign in with Google
+		</ion-button>
+
+		<ion-button (click)="refresh()"
+			class="ion-margin-top"
+			expand="block"
+			color="danger">
+			<ion-icon slot="start"
+				name="logo-google"></ion-icon>
+			Refresh
+		</ion-button>
 
 	</div>
 </ion-content>

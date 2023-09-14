@@ -6,6 +6,7 @@ import {
   MenuController,
 } from '@ionic/angular';
 import { AuthService } from '../_services/auth.service';
+import { GoogleAuthService } from '../_services/google-auth.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -19,6 +20,7 @@ export class LoginPage implements OnInit {
   constructor(
     private menuCtrl: MenuController,
     private authService: AuthService,
+    private googleAuthService: GoogleAuthService,
     private alertController: AlertController,
     private loadingController: LoadingController,
     private router: Router
@@ -44,12 +46,6 @@ export class LoginPage implements OnInit {
     this.menuCtrl.enable(false);
   }
 
-  sendloginForm() {
-    console.log('Do something fancy with the form...');
-    console.log('Password: ' + this.contactForm.get('password')!.value);
-    console.log('Email: ' + this.contactForm.get('email')!.value);
-  }
-
   async login() {
     const loading = await this.loadingController.create();
     await loading.present();
@@ -61,6 +57,21 @@ export class LoginPage implements OnInit {
     } else {
       this.showAlert('Login failed', 'Please try again!');
     }
+  }
+
+  async singInWithGoogle() {
+    try {
+      const user = await this.googleAuthService.googleSignIn();
+      if (user == null) {
+        this.showAlert('Login failed', 'Please try again!');
+        return;
+      }
+      this.router.navigateByUrl('home', { replaceUrl: true });
+    } catch {}
+  }
+
+  async refresh() {
+    await this.googleAuthService.refresh();
   }
 
   async showAlert(header: string, message: string) {

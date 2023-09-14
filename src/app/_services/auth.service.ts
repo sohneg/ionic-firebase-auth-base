@@ -1,14 +1,15 @@
+import { getAuth } from 'firebase/auth';
 import { Injectable } from '@angular/core';
 import {
   Auth,
-  authState,
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
   signOut,
   User,
+  authState,
 } from '@angular/fire/auth';
 import { EMPTY, Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Platform } from '@ionic/angular';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +17,7 @@ import { map } from 'rxjs/operators';
 export class AuthService {
   public readonly user: Observable<User | null> = EMPTY;
 
-  constructor(private afAuth: Auth) {}
+  constructor(private afAuth: Auth, private platform: Platform) {}
 
   async login(email: string, password: string) {
     try {

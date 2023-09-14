@@ -5,13 +5,7 @@
 export const environment = {
   production: false,
   firebaseConfig: {
-    apiKey: "AIzaSyAUa0zhmovM0LZxEzXPqNBc5fXxX41xRVQ",
-    authDomain: "petracker-lite.firebaseapp.com",
-    projectId: "petracker-lite",
-    storageBucket: "petracker-lite.appspot.com",
-    messagingSenderId: "951467182196",
-    appId: "1:951467182196:web:4d57674c65aa248aa6e921",
-    measurementId: "G-7QBM7WRYCX"
+    "ADD CONIFG"
   }
 };
 
